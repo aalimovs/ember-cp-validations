@@ -180,7 +180,7 @@ function normalizeOptions(validations = {}, globalOptions = {}) {
     }
     validations[attribute] = makeArray(validations[attribute]);
     validations[attribute].forEach(v => {
-      v.globalOptions = globalOptions;
+      deepSet(v, 'globalOptions', globalOptions);
     });
   });
 }
